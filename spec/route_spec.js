@@ -8,7 +8,6 @@ describe("JSON Routes", function() {
       request(rootPath + 'albums.json', function(error, response, body) {
         albums = JSON.parse(body);
         expect(albums[0].artist).toBeDefined();
-        // expect(true).toBe(true);
         done();
       });
     });
@@ -16,7 +15,7 @@ describe("JSON Routes", function() {
 
   describe("/albums/<album>.json", function() {
     it("returns an array of tracks", function(done) {
-      request(rootPath + 'albums/' + albums[0].title + ".json", function(error, response, body) {
+      request(rootPath + 'albums/' + '1989' + ".json", function(error, response, body) {
         expect(JSON.parse(body)[0].title).toBeDefined();
         done();
       });

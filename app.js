@@ -7,7 +7,6 @@ http.createServer(function (request, response) {
     request.addListener('end', function () {
         fileServer.serve(request, response, function (err, result) {
             console.log(request.url);
-            fileServer.serve(request.url);
             if (err) { // There was an error serving the file
                 console.error("Error serving " + request.url + " - " + err.message);
  
